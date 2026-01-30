@@ -62,7 +62,7 @@ export class UsersService {
     const totalPages = Math.ceil(totalUsers / limit);
 
     if (page > totalPages) {
-      throw new BadRequestException('Invalid page param!');
+      throw new BadRequestException(`Last page is ${totalPages}`);
     }
 
     return {
